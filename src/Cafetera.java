@@ -16,7 +16,7 @@ public class Cafetera implements Runnable{
         for (int i = 0; i < totalCafes; i++){
 
             try {
-                Thread.sleep((int) (Math.random()* 2000 + 1000));
+                Thread.sleep((int) (Math.random()* 500 + 200));
             } catch (InterruptedException e) {
                 System.out.println("La cafetera fue interrumpida");
                 break;

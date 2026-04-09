@@ -3,6 +3,7 @@ public class Profesor implements Runnable{
     private Deposito deposito;
     private String nombre;
     private int cafesBebidos;
+    private int cafesConsumidos;
 
     public Profesor(Deposito deposito, String nombre, int cafesBebidos){
         this.deposito = deposito;
@@ -21,14 +22,15 @@ public class Profesor implements Runnable{
                 break;
             }
 
+            cafesConsumidos++;
+
             try {
-                Thread.sleep((int) (Math.random() * 2000 + 1000));
+                Thread.sleep((int) (Math.random() * 3000 + 1000));
             } catch (InterruptedException e) {
                 System.out.println(nombre + " fue interrumpido mientras tomaba el café.");
             }
-
-
         }
+        System.out.println(nombre + " ha consumido " + cafesConsumidos + " cafés.");
 
     }
 }
